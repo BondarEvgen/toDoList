@@ -1,7 +1,7 @@
 ;(function (){
     'use strict'
 
-    // Старт приложения
+    // Start the application
 
     function start () {
         
@@ -11,8 +11,8 @@
 
         view.update(model.getItems())
 
-        // Отлавливаем событие click и назначем собітие которое должно произойти
-        //  в зависимости на какую керпку нажали
+        // Catch the click event and assign the event that should happen
+         // depending on which button they clicked
         
         view.clickHandler = function(elementId, itemId) {
             if(elementId === 'clickByItem'){

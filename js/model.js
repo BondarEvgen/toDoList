@@ -1,16 +1,16 @@
 ;(function(){
     'use strict'
 
-// Создаем базу данных
+// Create a database
 
     let items = [
-        {id: 1, content: 'Купить хлеб', done: true, checked: true},
-        {id: 2, content: 'Купить молоко', done: false, checked: false}
+        {id: 1, content: 'Buy bread', done: true, checked: true},
+        {id: 2, content: 'Buy milk', done: false, checked: false}
     ]
     
     let idCounter = 3
     
-    // Возаращает копию базы данных
+    // Returns a copy of the database
 
     function getItems () {
         const copyItems = []
@@ -28,7 +28,7 @@
         return copyItems
     }
 
-    // Добавляет элемент в базу данных
+    // Adds an item to the database
     
     function addItem (content) {
         const item = {
@@ -46,7 +46,7 @@
     
     }
 
-    // Удаояет элемент из базы данных
+    // Removes an item from the database
     
     function removeItem (removedId) {
         const newItems = []
@@ -61,7 +61,7 @@
         model.dispatch(getItems())
     }
 
-    //  Изменяет атрибут элемента cheched в базе данных
+    // Changes the attribute of the checked element in the database
     
     function toggleChecked ( itemId) {
         for (const item of items) {
@@ -73,7 +73,7 @@
         model.dispatch(getItems())
     }
     
-    // Изменяет статус done элемента в базе данных
+    // Changes the done status of an item in the database
     
     function setDoneStatus (itemId, status) {
     

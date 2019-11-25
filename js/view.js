@@ -4,17 +4,17 @@
     const template = `
     <div id="app">
         <input type="text" id="enter">
-        <button id="addItem">Добвить</button>
+        <button id="addItem">Add</button>
         <div id="todoList"></div>
-        <button id="makeDone">Выполнить</button>
-        <button id="makeNotDone">Востановить</button>
-        <button id="remove">Удалить</button>
+        <button id="makeDone">Done</button>
+        <button id="makeNotDone">Restore</button>
+        <button id="remove">Delete</button>
     </div>
     `
 
     let rootElement = null
 
-    // Создаем div и отображаем дочерние элемнгты div
+    // Create a div and display child div elements
 
     function getRoot () {
         const divElement = document.createElement('div')
@@ -23,7 +23,7 @@
          rootElement = divElement.firstElementChild
 
         const buttonElements = rootElement.querySelectorAll('button')
-        console.log(buttonElements)
+ 
         for (let i = 0; i < buttonElements.length; i++) {
             const buttonElement = buttonElements[i]
 
@@ -47,7 +47,7 @@
         rootElement.querySelector('#enter').value = value
     }
 
-//  Обновляем страницу
+// Refresh the page
 
     function update (items) {
         const todoListElement = document.querySelector('#todoList')
@@ -60,7 +60,7 @@
     }
 
 
-//  Создаем все элементы списка на странице
+// Create all the list items on the page
 
     function createTodoList (items) {
         const ulElement = document.createElement('ul')
@@ -88,9 +88,7 @@
             inputElement.addEventListener('click', function(event){
                 event.preventDefault()
                 view.clickHandler('clickByItem', item.id)
-            //    model.toggleChecked(item.id)
-    
-                // update()
+           
             })
         }
     
